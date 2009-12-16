@@ -21,9 +21,13 @@
 -(void)awakeFromNib
 {
 	BOOL copyOnSelect = [[NSUserDefaults standardUserDefaults] boolForKey:USER_DEFAULTS_KEY];
+	BOOL pasteOnRightClick = [[NSUserDefaults standardUserDefaults] boolForKey:USER_DEFAULTS_RIGHTCLICK_KEY];
 	NSMenu* applicationMenu = [[[[NSApplication sharedApplication] mainMenu] itemAtIndex: 0] submenu];
+
+	copyOnSelectMenuItem.state = copyOnSelect;
+	pasteOnRightClickMenuItem.state = pasteOnRightClick;
+	
 	for(NSMenuItem* menuItem in [terminalMenuAdditions itemArray]){
-		menuItem.state = copyOnSelect;
 		[terminalMenuAdditions removeItem:menuItem];
 		[applicationMenu insertItem:menuItem atIndex:3];
 	}
@@ -33,6 +37,7 @@
 toggle:(NSMenuItem *)sender
 {
 	sender.state = 1 - sender.state;
-	[[NSUserDefaults standardUserDefaults] setBool:sender.state forKey:USER_DEFAULTS_KEY];
+	NSString* key = sender.tag == 0 ? USER_DEFAULTS_KEY : USER_DEFAULTS_RIGHTCLICK_KEY;
+	[[NSUserDefaults standardUserDefaults] setBool:sender.state forKey:key];
 }
 @end

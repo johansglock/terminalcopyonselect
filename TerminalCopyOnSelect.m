@@ -14,6 +14,20 @@ myMouseUp:(NSEvent *)theEvent
 	}
 	[selectedText release];
 }
+
+
+- (void)
+myRightMouseDown:(NSEvent *)theEvent
+{
+	if([[NSUserDefaults standardUserDefaults] boolForKey:USER_DEFAULTS_RIGHTCLICK_KEY])
+	{
+		[(id)self performSelector:@selector(paste:) withObject:nil];
+		return;
+	}
+	
+	[self myRightMouseDown:theEvent];
+}
+	
 @end
 
 @implementation TerminalCopyOnSelect
@@ -26,6 +40,10 @@ myMouseUp:(NSEvent *)theEvent
 	Method mouseUp = class_getInstanceMethod(class, @selector(mouseUp:));
 	Method myMouseUp = class_getInstanceMethod(class, @selector(myMouseUp:));
 	method_exchangeImplementations(mouseUp, myMouseUp);
+	
+	Method rightMouseDown = class_getInstanceMethod(class, @selector(rightMouseDown:));
+	Method myRightMouseDown = class_getInstanceMethod(class, @selector(myRightMouseDown:));
+	method_exchangeImplementations(rightMouseDown, myRightMouseDown);
 	
 	NSLog(@"TerminalCopyOnSelect installed");
 }
