@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20238A1919118C0200185B40 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20238A1819118C0200185B40 /* Storyboard.storyboard */; };
 		543C23BA0CD66E0D00F7E2C9 /* TerminalCopyOnSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 543C23B90CD66E0D00F7E2C9 /* TerminalCopyOnSelect.m */; };
 		54E21F160CD7D01E00EEA257 /* TCOSPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = 54E21F150CD7D01E00EEA257 /* TCOSPreferences.nib */; };
 		54E21F190CD7D03800EEA257 /* TCOSPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E21F180CD7D03800EEA257 /* TCOSPreferences.m */; };
@@ -33,6 +34,7 @@
 		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		20238A1819118C0200185B40 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		32DBCF630370AF2F00C91783 /* TerminalCopyOnSelect_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TerminalCopyOnSelect_Prefix.pch; sourceTree = "<group>"; };
 		543C23B80CD66E0D00F7E2C9 /* TerminalCopyOnSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TerminalCopyOnSelect.h; sourceTree = "<group>"; };
 		543C23B90CD66E0D00F7E2C9 /* TerminalCopyOnSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TerminalCopyOnSelect.m; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		089C166AFE841209C02AAC07 /* TerminalColoreopard */ = {
 			isa = PBXGroup;
 			children = (
+				20238A1819118C0200185B40 /* Storyboard.storyboard */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				32C88E010371C26100C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
@@ -183,6 +186,7 @@
 			files = (
 				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
 				54E21F160CD7D01E00EEA257 /* TCOSPreferences.nib in Resources */,
+				20238A1919118C0200185B40 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +258,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -263,7 +267,7 @@
 			buildSettings = {
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
